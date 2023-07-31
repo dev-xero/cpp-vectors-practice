@@ -49,15 +49,36 @@ vector<int> clusterGrades(vector<int> grades)
     return cluster;
 }
 
+template <typename T>
+void coutVector(vector<T> vectorParam)
+{
+    for (T item : vectorParam)
+    {
+        cout << item << " ";
+    }
+
+    cout << endl;
+}
+
 int main()
 {
     vector<int> testGrades = {42, 65, 95, 100, 39, 67, 95, 76, 88, 76, 83, 92, 76, 93};
-    vector<int> clusteredGrades = clusterGrades(testGrades);
+    vector<int> clusteredTestGrades = clusterGrades(testGrades);
+    
+    coutVector(clusteredTestGrades);
 
-    for (int count : clusteredGrades)
+    cout << "\nEnter a sequence of grades in the range 0 - 100 separated by spaces\n" << endl;
+
+    int grade;
+    vector<int> gradesVector;
+
+    while (cin >> grade)
     {
-        cout << count << " ";
+        gradesVector.push_back(grade);
     }
+
+    vector<int> clusteredGrades = clusterGrades(gradesVector);
+    coutVector(clusteredGrades);
 
     cout << endl;
 
