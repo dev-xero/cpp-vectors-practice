@@ -3,6 +3,9 @@
 
 using namespace std;
 
+/// @brief Clusters a vector of grades in groups of 10
+/// @param grades A vector which contains grades in the range 0 - 100 inclusive
+/// @return A vector containing the grades in clusters of 10
 vector<int> clusterGrades(vector<int> grades)
 {
     vector<int> cluster(11);
